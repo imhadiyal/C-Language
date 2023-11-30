@@ -1,27 +1,26 @@
 #include <stdio.h>
 int main()
 {
-    char name1[20], rev[20], len = 0;
-    printf("enter a string:");
-    scanf("%s", &name1);
-    for (int i = 0; name1[20] != '\0'; i++)
-    {
+    char string1[20], string2[20];
+    printf("Enter any string : ");
+    scanf("%[^\n]", &string1);
+
+    int len = 0, count = 0;
+
+    for (int i = 0; string1[i] != '\0'; i++)
         len++;
-    }
-    int j = 0, a = 0;
-    for (int i = len - 1; i >= 0; i--)
-    {
-        rev[j] = name1[i];
-        j++;
-    }
+
+    for (int i = 0; i < len; i++)
+        string2[len - (i + 1)] = string1[i];
+
     for (int i = 0; i < len; i++)
     {
-        (rev[i] == name1[i])
-            ? a++
-            : a == 0;
+        if (string1[i] == string2[i])
+            count++;
     }
-    (a == len)
-        ? printf("palindrome")
-        : printf("not palindrome");
+
+    len == count
+        ? printf("Given string is palindrome !!")
+        : printf("Given string is not pailndrome !!");
     return 0;
 }
