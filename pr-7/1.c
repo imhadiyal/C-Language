@@ -1,70 +1,79 @@
 #include <stdio.h>
 
-#define P printf
-#define S scanf
-
-main()
+void statement()
 {
-    int a, b, c, darshan;
-next:
-    P("\n\npress 1 for +\n");
-    P("press 2 for -\n");
-    P("press 3 for *\n");
-    P("press 4 for /\n");
-    P("press 5 for %%\n");
-    P("press 0 for EXIT\n");
-    P("enter your choice:");
-    S("%d", &darshan);
+    printf("Press 1 for +\n");
+    printf("Press 2 for -\n");
+    printf("Press 3 for *\n");
+    printf("Press 4 for /\n");
+    printf("Press 5 for %% \n");
+    printf("Press 0 for Exit\n");
+}
 
-    switch (darshan)
+void sum(int a, int b)
+{
+    printf("\n\nSum : %d\n", a + b);
+}
+
+void sub(int a, int b)
+{
+    printf("\n\nSub : %d\n", a - b);
+}
+
+void mult(int a, int b)
+{
+    printf("\n\nMul : %d\n", a * b);
+}
+
+void div(int a, int b)
+{
+    printf("\n\nDiv : %d\n", a / b);
+}
+
+void mod(int a, int b)
+{
+    printf("\n\nMod : %d\n", a % b);
+}
+
+int main()
+{
+    int a, b, choice;
+
+    printf("Enter 1st value : ");
+    scanf("%d", &a);
+    printf("Enter 2nd value : ");
+    scanf("%d", &b);
+
+    do
     {
+        statement();
+        scanf("%d", &choice);
 
-    case 1:
-        P("Enter a:");
-        S("%d", &a);
-        P("Enter b:");
-        S("%d", &b);
-        c = (a + b);
-        P("\n\nSum of %d and %d is : %d", a, b, c);
-        goto next;
+        switch (choice)
+        {
+        case 1:
+            sum(a, b);
+            break;
+        case 2:
+            sub(a, b);
+            break;
+        case 3:
+            mult(a, b);
+            break;
+        case 4:
+            div(a, b);
+            break;
+        case 5:
+            mult(a, b);
+            break;
+        case 0:
+            printf("Exit !!");
+            break;
+        default:
+            printf("Unknown intput !!");
+        }
 
-    case 2:
-        P("Enter a:");
-        S("%d", &a);
-        P("Enter b:");
-        S("%d", &b);
-        c = (a - b);
-        P("\n\nSub of %d and %d is : %d", a, b, c);
-        goto next;
+    } while (choice != 0);
 
-    case 3:
-        P("Enter a:");
-        S("%d", &a);
-        P("Enter b:");
-        S("%d", &b);
-        c = (a * b);
-        P("\n\nmul of %d and %d is : %d", a, b, c);
-        goto next;
-
-    case 4:
-        P("Enter a:");
-        S("%d", &a);
-        P("Enter b:");
-        S("%d", &b);
-        c = (a / b);
-        P("\n\ndiv of %d and %d is : %d", a, b, c);
-        goto next;
-
-    case 5:
-        P("Enter a:");
-        S("%d", &a);
-        P("Enter b:");
-        S("%d", &b);
-        c = (a % b);
-        P("\n\nmod of %d and %d is : %d", a, b, c);
-        goto next;
-
-    case 6:
-        break;
-    }
+    return 0;
 }
