@@ -1,0 +1,6 @@
+Customer Name: darsah
+Contact Number: 2122211333
+
+Product No	Product Name	Price	Quantity	Total
+1221		assssssssssssas		122.00	22		3167.12
+122		eeeqd		122.00	1		143.96
